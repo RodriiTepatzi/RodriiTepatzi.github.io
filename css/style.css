@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*--------------------*/
+/* ---- Body Grid ----*/
+/*--------------------*/
+
+#body-grid{
+    display: grid;
+    grid-template-areas:    "navbar"
+                            "content"
+                            "footer";
+}
+
+/*-----------------*/
+/* ---- navbar ----*/
+/*-----------------*/
+
+#navbar{
+    grid-area: navbar;
+    height: 80px;
+}
+
+#navbar ul{
+    list-style: none;
+}
