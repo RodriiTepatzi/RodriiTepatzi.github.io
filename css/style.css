@@ -21,8 +21,22 @@
 #navbar{
     grid-area: navbar;
     height: 80px;
+    width: 100vw;
+    display: fixed;
+    
+}
+#navbar-grid{
+    display: grid;
+    grid-template-areas: "navlogo" "navlinks";
+}
+
+#navbar-logo{
+    grid-area: navlogo;
+    width: 80px;
+    height: auto;
 }
 
 #navbar ul{
     list-style: none;
 }
+
