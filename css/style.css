@@ -1,6 +1,20 @@
+:root{
+    --navbar-first-color: rgb(255, 255, 255);
+    --navbar-second-color: #fff;
+    --a-color: #000;
+    --a-hover-color: rgb(143, 143, 143);
+    --text-color: rgb(75, 75, 75);
+}
+
+@font-face {
+    font-family: 'Prime';
+    src: url('../fonts/Prime/Prime-Light.eot');
+}
+
 *{
     padding: 0;
     margin: 0;
+    font-family: Prime, sans-serif;
 }
 
 /*--------------------*/
@@ -19,24 +33,78 @@
 /*-----------------*/
 
 #navbar{
+    position: fixed;
     grid-area: navbar;
     height: 80px;
-    width: 100vw;
-    display: fixed;
-    
+    width: 100%;
+    display: flexbox;
+    flex-flow: column;
+    align-self: center;
+    background-color: var(--navbar-first-color);
+    border-bottom:2px solid rgb(199, 199, 199);
 }
+
 #navbar-grid{
     display: grid;
-    grid-template-areas: "navlogo" "navlinks";
+    grid-template-areas: "navlogo navlinks";
+    grid-template-columns: 80px auto;
 }
 
 #navbar-logo{
     grid-area: navlogo;
-    width: 80px;
+    width: 50px;
+    padding: 10px 10px 0 10px;
     height: auto;
+}
+#nav-links{
+    grid-area: navlinks;
+    
 }
 
 #navbar ul{
     list-style: none;
+    
 }
 
+#navbar ul li {
+    float: right;
+    height: 80px;
+    padding: 0 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+#navbar ul li a{
+    text-decoration: none;
+    margin: auto;
+    color: var(--text-color);
+    font-size: 1.1em;
+    transition: all 0.3s;
+}
+
+#navbar ul li a:hover{
+    color: var(--a-hover-color);
+    transform: translateY(2px);
+    transition: all 0.3s;
+}
+
+
+
+/*------------------*/
+/* ---- Content ----*/
+/*------------------*/
+
+#content{
+    grid-area: content;
+    height: auto;
+}
+
+#welcome-section{
+    display: block;
+    padding-top: 80px;
+    height: 100vh;
+    background: #fff;
+    background-position: 100% 100vh;
+}
