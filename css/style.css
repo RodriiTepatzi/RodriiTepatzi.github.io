@@ -1,9 +1,9 @@
 :root{
-    --navbar-first-color: rgb(255, 255, 255);
-    --navbar-second-color: #fff;
+    --first-bg-color: #E5EEC1;
+    --second-bg-color: #a2d4ab;
     --a-color: #000;
     --a-hover-color: rgb(143, 143, 143);
-    --text-color: rgb(75, 75, 75);
+    --text-color: #5A5050;
 }
 
 @font-face {
@@ -40,8 +40,8 @@
     display: flexbox;
     flex-flow: column;
     align-self: center;
-    background-color: var(--navbar-first-color);
-    border-bottom:2px solid rgb(199, 199, 199);
+    background-color: var(--first-bg-color);
+    /*border-bottom:2px solid rgb(199, 199, 199);*/
 }
 
 #navbar-grid{
@@ -55,6 +55,13 @@
     width: 50px;
     padding: 10px 10px 0 10px;
     height: auto;
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+#navbar-logo:hover{
+    transform: scale(1.1);
+    transition: all 0.3s;
 }
 #nav-links{
     grid-area: navlinks;
@@ -101,10 +108,25 @@
     height: auto;
 }
 
+/*------------------*/
+/* ---- WELCOME ----*/
+/*------------------*/
+
 #welcome-section{
     display: block;
     padding-top: 80px;
     height: 100vh;
-    background: #fff;
+    background: var(--first-bg-color);
+    background-position: 100% 100vh;
+}
+
+/*-------------------*/
+/* ---- PROJECTS ----*/
+/*-------------------*/
+
+#projects{
+    display: block;
+    height: 100vh;
+    background: var(--second-bg-color);
     background-position: 100% 100vh;
 }
