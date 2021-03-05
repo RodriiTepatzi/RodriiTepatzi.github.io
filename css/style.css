@@ -1,9 +1,10 @@
 :root{
-    --first-bg-color: #E5EEC1;
-    --second-bg-color: #a2d4ab;
+    --first-bg-color: #e8e8e8;
+    --second-bg-color: #f8f8f8;
+    --navbar-color: #e8e8e8;
     --a-color: #000;
-    --a-hover-color: rgb(143, 143, 143);
-    --text-color: #5A5050;
+    --a-hover-color: rgb(99, 99, 99);
+    --text-color: #2b2b2b;
 }
 
 @font-face {
@@ -15,6 +16,7 @@
     padding: 0;
     margin: 0;
     font-family: Prime, sans-serif;
+    
 }
 
 /*--------------------*/
@@ -40,8 +42,15 @@
     display: flexbox;
     flex-flow: column;
     align-self: center;
-    background-color: var(--first-bg-color);
+    background-color: var(--navbar-color);
+    transition: all 0.4s;
     /*border-bottom:2px solid rgb(199, 199, 199);*/
+}
+
+.navbar-color-changer{
+    --navbar-color: #f8f8f8;
+    background-color: var(--navbar-color);
+    transition: all 0.4s;
 }
 
 #navbar-grid{
@@ -113,12 +122,27 @@
 /*------------------*/
 
 #welcome-section{
-    display: block;
-    padding-top: 80px;
-    height: 100vh;
+    display: flex;
+    min-height: 100vh;
     background: var(--first-bg-color);
     background-position: 100% 100vh;
+    vertical-align: center;
 }
+
+#welcome-text{
+    width: fit-content;
+    margin: auto;
+}
+
+/*----------------*/
+/* ---- ABOUT ----*/
+/*----------------*/
+
+#about{
+    min-height: 100vh;
+    background: var(--second-bg-color);
+}
+
 
 /*-------------------*/
 /* ---- PROJECTS ----*/
@@ -127,6 +151,37 @@
 #projects{
     display: block;
     height: 100vh;
-    background: var(--second-bg-color);
+    background: var(--first-bg-color);
     background-position: 100% 100vh;
+}
+
+.project-preview-img{
+    height: auto;
+    width: 180px;
+}
+
+
+/*---------------*/
+/* --- TEXTOS ---*/
+/*---------------*/
+
+.big-big-title{
+    font-size: 3em;
+}
+
+.big-title{
+    font-size: 2.4em;
+}
+
+.sub-title{
+    font-size: 1.8em;
+}
+
+.center{
+    text-align: center;
+    
+}
+
+.italic{
+    font-style: italic;
 }
