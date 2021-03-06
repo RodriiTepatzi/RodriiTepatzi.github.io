@@ -16,7 +16,7 @@
     padding: 0;
     margin: 0;
     font-family: Prime, sans-serif;
-    
+    color: var(--text-color);
 }
 
 /*--------------------*/
@@ -43,14 +43,20 @@
     flex-flow: column;
     align-self: center;
     background-color: var(--navbar-color);
-    transition: all 0.4s;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     /*border-bottom:2px solid rgb(199, 199, 199);*/
 }
 
 .navbar-color-changer{
     --navbar-color: #f8f8f8;
     background-color: var(--navbar-color);
-    transition: all 0.4s;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 #navbar-grid{
@@ -138,50 +144,144 @@
 /* ---- ABOUT ----*/
 /*----------------*/
 
-#about{
+#about-section{
     min-height: 100vh;
     background: var(--second-bg-color);
+    display: grid;
+    grid-template-areas:    "about-sec-title"
+                            "about-sec-pic"
+                            "about-sec-text";
 }
 
+#about-title{
+    grid-area: about-sec-title;
+    padding: 20px;
+}
 
+#profile-pic{
+    grid-area: about-sec-pic;
+    display: block;
+    width: 150px;
+    height: auto;
+    border-radius: 100%;
+    margin: auto;
+    padding: 24px;
+}
+
+#about-text{
+    grid-area: about-sec-text;
+    width: 80vw;
+    margin: auto;
+    padding: 8px;
+}
 /*-------------------*/
 /* ---- PROJECTS ----*/
 /*-------------------*/
 
-#projects{
-    display: block;
-    height: 100vh;
+#projects-section{
+    display: grid;
+    min-height: 100vh;
     background: var(--first-bg-color);
     background-position: 100% 100vh;
+    grid-template-areas: "projects-section-title"
+                         "projects-section-grid";
+    grid-template-rows: 120px auto;
+    row-gap: 40px;
+
 }
 
-.project-preview-img{
-    height: auto;
-    width: 180px;
+#projects-sec-title{
+    grid-area: projects-section-title;
+    padding: 8px;
+    margin: auto;
 }
 
-
-/*---------------*/
-/* --- TEXTOS ---*/
-/*---------------*/
-
-.big-big-title{
-    font-size: 3em;
+#projects-grid{
+    grid-area: projects-section-grid;
+    display: grid;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 300px 300px 300px;
+    column-gap: 12px;
+    row-gap: 12px;
+    grid-template-rows: auto;
 }
 
-.big-title{
-    font-size: 2.4em;
+.project-tile{
+    background: var(--second-bg-color);
+    display: grid;
+    grid-template-areas:    "project-tile-title"
+                            "project-tile-preview"
+                            "project-tile-button";
+    grid-template-rows: 60px 240px 60px;
+    row-gap: 4px;
+    border-radius: 24px;
+    border: 1px solid rgb(207, 207, 207);
 }
 
-.sub-title{
-    font-size: 1.8em;
-}
-
-.center{
-    text-align: center;
+.project-title{
+    margin: auto;
     
 }
 
-.italic{
-    font-style: italic;
+.project-preview{
+    display: flex;
+    vertical-align: middle;
+}
+
+.project-preview-img{
+    margin: auto;
+    display: block;
+    grid-area: project-tile-preview;
+    height: 180px;
+    width: 298px;
+    transition: all 0.3s;
+}
+
+.project-preview-img:active{
+    transform: scale(2.5);
+    transition: all 0.3s;
+}
+
+.project-button{
+    width: 100%;
+}
+
+.project-button > a {
+    display: block;
+    line-height: 60px;
+    width: 298px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    background: var(--second-bg-color);
+    color: var(--text-color);
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    transition: all 0.4s;
+}
+
+.project-button > a:hover {
+    --second-bg-color: var(--first-bg-color);
+    background: var(--second-bg-color);
+    color: var(--text-color);
+    transition: all 0.4s;
+}
+
+/*-------------*/
+/*---CONTACT---*/
+/*-------------*/
+
+#contact-section{
+    display: block;
+    height: 80px;
+}
+
+
+/*Social*/
+
+.social-svg{
+    width: 60px;
+    height: auto;
 }

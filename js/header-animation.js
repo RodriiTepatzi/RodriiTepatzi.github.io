@@ -1,35 +1,27 @@
-//Check it later to make it better
+$(window).on('load', (function() {
+   var welcome_sec_height = document.getElementById('welcome-section').clientHeight;
+   var about_sec_height = document.getElementById('about-section').clientHeight;
+   var projects_sec_height = document.getElementById('projects-section').clientHeight;
 
-/*$.fn.getContainerHeightbyId = function(id, document){
-   var h = document.querySelector(id).getBoundingClientRect.height;
-   return h;
-};*/
-
-$(function() {
-   var winheight = $(window).innerHeight()
-   var welcome_sec_height = document.querySelector('#welcome-section').getBoundingClientRect.height;
-   var about_sec_height = document.querySelector('#about').getBoundingClientRect.height;
-   var projects_sec_height = document.querySelector('#about').getBoundingClientRect.height;
+   $(window).resize (function(){
+      welcome_sec_height = document.getElementById('welcome-section').clientHeight;
+      about_sec_height = document.getElementById('about-section').clientHeight;
+      projects_sec_height = document.getElementById('projects-section').clientHeight;
+   });
 
    $(window).scroll(function () {
-      if ($(this).scrollTop() >= 0 && $(this).scrollTop() < (80 + welcome_sec_height))
+      if (($(this).scrollTop() >= 0) && ($(this).scrollTop() < (welcome_sec_height)))
       {
-         $('nav').removeClass('navbar-color-changer');
+         $('nav').removeClass('navbar-color-changer')
       }
-      if (($(this).scrollTop() > welcome_sec_height - 80) &&  (80 + welcome_sec_height + about_sec_height))
+      else if (($(this).scrollTop() > (welcome_sec_height - 80)) &&  ($(this).scrollTop() < (welcome_sec_height + about_sec_height)))
       {
-         $('nav').addClass('navbar-color-changer');
+         $('nav').addClass('navbar-color-changer')
       }
-      if ((80 + welcome_sec_height + about_sec_height - 80) && (80 + welcome_sec_height + about_sec_height + projects_sec_height))
+      else if (($(this).scrollTop() > (welcome_sec_height + about_sec_height - 80)) && ($(this).scrollTop() < (welcome_sec_height + about_sec_height + projects_sec_height)))
       {
          $('nav').removeClass('navbar-color-changer')
       } 
-      if ($(this).scrollTop() > (winheight*3)) 
-      {
-         $('nav').add('navbar-color-changer')
-      } 
    });
-});
+}));
 
-
-  
