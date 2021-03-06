@@ -274,14 +274,29 @@
 /*-------------*/
 
 #contact-section{
-    display: block;
-    height: 80px;
+    min-height: 400px;
+    display: flex;
+    vertical-align: middle;
 }
 
+#icons-container{
+    
+    margin: auto;
+    width: fit-content;
+}
 
+#icons-container > a{
+    text-decoration: none;
+}
 /*Social*/
 
 .social-svg{
     width: 60px;
     height: auto;
+    transition: all 0.4s;
+}
+
+.social-svg:hover{
+    transition: all 0.4s;
+    transform: scale(1.1);
 }
