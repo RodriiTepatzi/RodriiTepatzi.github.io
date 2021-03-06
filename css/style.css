@@ -189,7 +189,7 @@
 /* ---- PROJECTS ----*/
 /*-------------------*/
 
-#projects-section{
+#projects{
     display: grid;
     min-height: 100vh;
     background: var(--first-bg-color);
