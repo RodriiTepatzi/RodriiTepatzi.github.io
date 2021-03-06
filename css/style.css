@@ -10,6 +10,8 @@
 @font-face {
     font-family: 'Prime';
     src: url('../fonts/Prime/Prime-Light.eot');
+    src: url('../fonts/Prime/Prime-Light.woff') format('woff'),
+    url('../fonts/Prime/Prime-Light.woff2') format('woff2')
 }
 
 *{
